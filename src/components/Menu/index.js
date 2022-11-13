@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import DarkModeSwitch from "./components/DarkModeSwitch";
 import Search from "./components/Search";
 
 const StyledMenu = styled.header`
@@ -32,6 +33,7 @@ export default function Menu({ search, setSearch }) {
         <Logo />
       </div>
       <Search search={search} setSearch={setSearch} />
+      <DarkModeSwitch />
     </StyledMenu>
   );
 }
