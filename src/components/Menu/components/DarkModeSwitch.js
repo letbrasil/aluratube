@@ -35,11 +35,15 @@ const StyledSwitch = styled.div`
     top: 0;
     bottom: 0;
     left: 0;
-    transition: .3s;
+    transition: 0.3s;
     cursor: pointer;
   }
-  input[type="checkbox"] { display: none; }
-  input[type="checkbox"]:checked + label:before { transform: translateX(100%); }
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked + label:before {
+    transform: translateX(100%);
+  }
 `;
 
 export default function DarkModeSwitch() {
@@ -52,13 +56,10 @@ export default function DarkModeSwitch() {
         console.log("mudou o state");
         context.toggleMode();
       }}/>
-      <label
-        htmlFor="darkmode"
-        className="darkmode-switch"
-      >
+      <label htmlFor="darkmode" className="darkmode-switch">
         <span>🌙</span>
         <span>☀️</span>
       </label>
     </StyledSwitch>
-  )
+  );
 }

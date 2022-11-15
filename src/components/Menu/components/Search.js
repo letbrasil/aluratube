@@ -39,9 +39,7 @@ export default function Search({ search, setSearch }) {
   return (
     <StyledSearch>
       <input type="text" onChange={(e) => setSearch(e.target.value)} value={search} />
-      <button>
-        🔍
-      </button>
+      <button>🔍</button>
     </StyledSearch>
-  )
+  );
 }

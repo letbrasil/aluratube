@@ -5,7 +5,7 @@ import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 
 function HomePage() {
-  const estilosHomePage = { 
+  const estilosHomePage = {
     // display: "flex",
     // flexDirection: "column",
     // flex: 1,
@@ -55,7 +55,7 @@ function Header() {
   return (
     <StyledHeader>
       {/* bg via props */}
-      <StyledBanner bg={config.bg}/>
+      <StyledBanner bg={config.bg} />
       <section className="user-info">
         <img src={`https://github.com/${config.github}.png`} />
         <div>
@@ -64,10 +64,10 @@ function Header() {
         </div>
       </section>
     </StyledHeader>
-  )
+  );
 }
 
-function Timeline({searchValue, ...props}) {
+function Timeline({ searchValue, ...props }) {
   const playlistNames = Object.keys(props.playlists);
 
   return (
@@ -82,22 +82,20 @@ function Timeline({searchValue, ...props}) {
                 .filter((video) => {
                   const titleNormalized = video.title.toLowerCase();
                   const searchValueNormalized = searchValue.toLowerCase();
-                  return titleNormalized.includes(searchValueNormalized)
+                  return titleNormalized.includes(searchValueNormalized);
                 })
                 .map((video) => {
                   return (
                     <a key={video.url} href={video.url}>
                       <img src={video.thumb} />
-                      <span>
-                        {video.title}
-                      </span>
+                      <span>{video.title}</span>
                     </a>
-                  )
+                  );
                 })}
             </div>
           </section>
-        )
+        );
       })}
     </StyledTimeline>
-  )
+  );
 }
